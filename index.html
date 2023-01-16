@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de senha</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="icons/lock.svg" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Gerador de senhas aleatórias <img src="icons/lock.svg" alt=""></div>
+
+    <div class="result">
+      <span class="password"></span>
+      <button class="copy"><img src="icons/copiar.svg" alt=""></button>
+    </div>
+
+    <div class="card">
+      <div class="caracteres">
+        <p>Número de caracteres</p>
+        <input type="number" class="number"></input>
+        <input type="range" name="caractervalue" min="5" max="20" id="" class="range">
+      </div>
+
+      <div class="checks">
+        <div class="check">
+          <input type="checkbox" id="checkbox1">
+          <label for="checkbox1">Incluir letras minúsculas</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="checkbox2">
+          <label for="checkbox2">Incluir letras maiúsculas</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="checkbox3">
+          <label for="checkbox3">Incluir números</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="checkbox4">
+          <label for="checkbox4">Incluir símbolos</label>
+        </div>
+        <div class="nivel">
+          <span></span>
+        </div>
+      </div>
+
+      <button class="gerar-senha">GERAR <img src="icons/seta.svg" alt=""></button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

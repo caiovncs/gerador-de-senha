@@ -78,10 +78,16 @@ const generatePassword = (hasNumber, hasSymbols, hasUpper, hasLow, rangeValue) =
 
   if (rangeValue < 6 || newArray.length <= 26) {
     nivel.classList.add('fraco')
+    nivel.classList.remove('medio')
+    nivel.classList.remove('forte')
   } else if((rangeValue >= 6 && rangeValue <= 10) && newArray.length > 33) {
       nivel.classList.add('medio')
+      nivel.classList.remove('fraco')
+      nivel.classList.remove('forte')
   } else if (rangeValue > 10 && newArray.length > 20) {
       nivel.classList.add('forte')
+      nivel.classList.remove('medio')
+      nivel.classList.remove('fraco')
     }
 }
 
@@ -89,5 +95,4 @@ copy.addEventListener('click', copiar)
 
 function copiar() {
   navigator.clipboard.writeText(passwordHtml.innerText);
-  copyEffect.classList.add = 'ativo'
 }

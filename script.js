@@ -1,4 +1,3 @@
-// elementos selecionados
 const range = document.querySelector('.range');
 const number = document.querySelector('.number');
 const selectLowcase = document.getElementById('checkbox1');
@@ -11,15 +10,15 @@ const nivel = document.querySelector('.nivel span');
 const copy = document.querySelector('.copy');
 const copyEffect = document.querySelector('.result');
 
-// valores iniciais do range 
+
 range.value = 10
 number.value = 10
 
-// interação range-input
+
 range.addEventListener('input', rangeScroll)
 number.addEventListener('keyup', inputNumber)
 
-// borda vermelha no input number caso o valor seja menor que 5 ou maior que 25
+
 function inputNumber(event) {
   event.preventDefault()
   if(number.value >= 5 && number.value <=25) {
@@ -41,7 +40,7 @@ const letterNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 const letterLow = caracters.map((item) => String.fromCharCode(item))
 const letterUpper = letterLow.map((item) => item.toUpperCase())
 
-//evento de click no botao principal, executa de acordo com os campos selecionados
+
 btnCheck.addEventListener('click', () => {
   generatePassword(selectNumber.checked,
     selectSymbols.checked,
@@ -52,8 +51,6 @@ btnCheck.addEventListener('click', () => {
 });
 
 
-// verifica se o checkbox checked é true, se for, ele atribui o array com os elementos referente a ele nessa nova array, que vai conter todos os elementos que estao dentro dos selecionados. se nao for true retorna uma array vazia
-// operador spread pra distribuir os itens iteraveis 1 a 1 dentro da nova array, sem ele viria a array pura com []
 const generatePassword = (hasNumber, hasSymbols, hasUpper, hasLow, rangeValue) => {
   const newArray = [
     ...(hasNumber ? letterNumber : []),
@@ -67,11 +64,9 @@ const generatePassword = (hasNumber, hasSymbols, hasUpper, hasLow, rangeValue) =
 
   let password = "";
 
-  //for na quantidade do range/input
+
   for (let i = 0; i < rangeValue; i++) {
-    //index sorteado referente a um elemento do array
     const randomIndex = Math.floor(Math.random() * newArray.length);
-    //concatena os elementos sorteados
     password += newArray[randomIndex]
   }
   passwordHtml.innerText = password

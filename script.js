@@ -21,7 +21,7 @@ number.addEventListener('keyup', inputNumber)
 
 function inputNumber(event) {
   event.preventDefault()
-  if(number.value >= 5 && number.value <=25) {
+  if(number.value >= 5 && number.value <=20) {
     range.value = number.value
     number.style.border = "none"
   } else {
